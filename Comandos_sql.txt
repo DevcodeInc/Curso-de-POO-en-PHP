@@ -1,0 +1,31 @@
+###### Conectarse a mysql ############
+
+mysql -u root -h localhost -p  
+Y luego poner la clave
+
+
+
+Una vez dentro de la consola de Mysql
+
+#Crear base de datos 
+# CREATE DATABASE NOMBRE_DB CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql>CREATE DATABASE testPoo2 CHARACTER SET COLLATE utf8_general_ci;
+
+# Crear usuario con clave y darle permiso a una base de datos
+# GRANT ALL PRIVILEGES ON NOMBRE_DB.(NOMBRE DE TABLAS O TODOS CON *) TO 
+# 'NOMBRE_USUARIO'@'(NOMBRE_SERVIDOR O localhost)' To IDENTIFIED BY 'CLAVE';
+
+mysql>GRANT ALL PRIVILEGES ON testPoo2.* TO 'UserTestPoo2'@'localhost' IDENTIFIED BY 'devcodela';
+
+#Salir de mysql
+
+mysql>exit
+
+########## Para conectarse de nuevo pero con el usuario creado desde la consola de linux
+
+user@nombreMaquina:~$ mysql -u UserTestPoo2 -h localhost -p
+# y luego poner la clave.
+
+# mostrar base de datos con acceso
+
+mysql> show databases
